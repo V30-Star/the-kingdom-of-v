@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>The Kingdom of V — Master Ecosystem & Web3 Command Hub</title>
+  
+  <!-- Fonts & CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            space: {
+              950: '#030712',
+              900: '#060B18',
+              850: '#0A1124',
+              800: '#0F1A36',
+            },
+            cyber: {
+              cyan: '#06B6D4',
+              violet: '#8B5CF6',
+              emerald: '#10B981',
+              gold: '#F59E0B',
+              rose: '#F43F5E'
+            }
+          },
+          animation: {
+            'glow-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'spin-slow': 'spin 12s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #030712;
+      color: #F3F4F6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Web3 Background Grid & Mesh */
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    /* Web3 Glassmorphism Glow Cards */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(15, 26, 54, 0.6) 0%, rgba(6, 11, 24, 0.75) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .glass-header {
+      background: rgba(3, 7, 18, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    /* Glow Gradients */
+    .glow-cyan {
+      box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.25);
+    }
+    .glow-violet {
+      box-shadow: 0 0 50px -10px rgba(139, 92, 246, 0.25);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.25);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col relative selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Interactive Canvas Web3 Particle Network -->
+  <canvas id="web3-particles" class="fixed inset-0 pointer-events-none -z-10"></canvas>
+  <div class="fixed inset-0 bg-grid-pattern -z-10 opacity-60 pointer-events-none"></div>
+
+  <!-- Ambient Light Orbs -->
+  <div class="fixed top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-br from-cyan-600/20 via-violet-600/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[350px] bg-emerald-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- TOP WEB3 NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 glass-header">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-500 via-violet-600 to-rose-500 p-0.5 shadow-lg shadow-violet-500/20 flex items-center justify-center animate-glow-slow">
+          <div class="w-full h-full bg-space-950 rounded-[14px] flex items-center justify-center font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 text-lg">
+            V
+          </div>
+        </div>
+        <div>
+          <h1 class="font-display font-extrabold text-base tracking-wider uppercase text-white flex items-center gap-1.5 leading-none">
+            The Kingdom of V
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          </h1>
+          <p class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase mt-1">Autonomous Core Ecosystem</p>
+        </div>
+      </div>
+
+      <!-- Live Server Telemetry Pill -->
+      <div class="flex items-center gap-2">
+        <div class="hidden sm:flex items-center gap-2 bg-space-900/80 border border-white/10 px-3 py-1.5 rounded-full font-mono text-xs text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Host: <strong class="text-white">160.19.166.53</strong></span>
+          <span class="text-slate-600">|</span>
+          <span id="header-clock" class="text-cyan-400 font-bold">--:--:-- WIB</span>
+        </div>
+        <a href="https://github.com/V30-Star" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-slate-200 hover:text-cyan-400 transition flex items-center gap-1.5">
+          <span>GitHub</span>
+          <span class="text-xs">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-8 text-center relative">
+    
+    <!-- Cyber Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/10 via-violet-500/10 to-transparent border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold mb-6 shadow-inner">
+      <span class="text-cyan-400">⚡</span>
+      <span>WEB3 MASTER PORTAL & CLOUD NODE HUB</span>
+    </div>
+
+    <h2 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight max-w-4xl mx-auto">
+      One Nexus. <br class="hidden sm:block" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-rose-400">
+        Three Autonomous Intelligent Systems.
+      </span>
+    </h2>
+
+    <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mt-4 leading-relaxed font-normal">
+      Portal terpadu <strong>The Kingdom of V</strong> mengintegrasikan kecerdasan kuantitatif bursa saham, sistem mastery bahasa Jerman adaptif, dan infrastruktur operasional kasir thermal bengkel dalam satu server berkecepatan tinggi.
+    </p>
+
+    <!-- Real-Time Metrics Ribbon -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mt-8 pt-4">
+      <div class="glass-card p-3.5 rounded-2xl text-center">
+        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">Active Deployments</span>
+        <strong class="font-display text-lg font-bold text-cyan-400">3 Apps Live</strong>
+      </div>
+      <div class="glass-card p-3.5 rounded-2xl text-center">
+        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">AI Strategy Engine</span>
+        <strong class="font-display text-lg font-bold text-violet-400">GPT-5.6 SOL</strong>
+      </div>
+      <div class="glass-card p-3.5 rounded-2xl text-center">
+        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">Database Cluster</span>
+        <strong class="font-display text-lg font-bold text-emerald-400">PostgreSQL 16</strong>
+      </div>
+      <div class="glass-card p-3.5 rounded-2xl text-center">
+        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">Server Latency</span>
+        <strong class="font-display text-lg font-bold text-amber-400">&lt; 15 ms (Fast)</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- MAIN ECOSYSTEM APPS GRID -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 space-y-6 flex-1 w-full">
+    
+    <div class="flex items-center justify-between pb-2 border-b border-white/5">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">01 // LIVE ECOSYSTEM APPS</span>
+      </div>
+      <span class="text-xs font-mono text-slate-500">Node IP: 160.19.166.53</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- ===================================================================
+           APP 1: SAHAM INVESTAMA UTAMA
+           =================================================================== -->
+      <article class="glass-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group glow-cyan">
+        <div class="absolute -right-12 -top-12 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition duration-500"></div>
+        
+        <div>
+          <!-- Top Tag & Icon -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+              📈
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono text-[10px] font-bold uppercase tracking-wider">
+              High-Conviction AI
+            </span>
+          </div>
+
+          <h3 class="font-display text-xl font-bold text-white group-hover:text-cyan-300 transition">
+            Saham Investama Utama
+          </h3>
+          <p class="text-xs font-mono text-cyan-400/90 mt-0.5">Saham Intelligence Hub</p>
+
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Platform analitik 956 emiten IDX dengan 5-Layer Confluence (>80% win rate), Bandarmologi & Foreign Flow, Gating IEP/IEV, Screening BTST 15:30 WIB, dan Jurnal Compounding 5jt ➔ 100jt.
+          </p>
+
+          <!-- Tech Specs Pill -->
+          <div class="flex flex-wrap gap-1.5 mt-4 pt-4 border-t border-white/5">
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">React PWA</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">Node Express</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-cyan-400">GPT-5.6 SOL</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">saham_db</span>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-4">
+          <a 
+            href="/saham-investama-utama" 
+            class="w-full py-3.5 px-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-extrabold rounded-2xl shadow-lg shadow-cyan-600/25 flex items-center justify-center gap-2 text-xs uppercase tracking-wider active:scale-95 transition"
+          >
+            <span>Launch Saham Hub</span>
+            <span>➔</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           APP 2: LIEBE BELAJAR BAHASA JERMAN
+           =================================================================== -->
+      <article class="glass-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group glow-violet">
+        <div class="absolute -right-12 -top-12 w-32 h-32 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition duration-500"></div>
+
+        <div>
+          <!-- Top Tag & Icon -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+              🇩🇪
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 font-mono text-[10px] font-bold uppercase tracking-wider">
+              CEFR A1 ➔ C2 Pro
+            </span>
+          </div>
+
+          <h3 class="font-display text-xl font-bold text-white group-hover:text-violet-300 transition">
+            Liebe Bahasa Jerman
+          </h3>
+          <p class="text-xs font-mono text-violet-400/90 mt-0.5">Mastery & Spaced Repetition</p>
+
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Sistem pembelajaran Jerman berbasis gamifikasi RPG: Sentence Builder interaktif, Passing Score ketat 80%, Pomodoro Timer, Target Waktu 3 Bulan, dan Pelafalan Audio Jokowi AI.
+          </p>
+
+          <!-- Tech Specs Pill -->
+          <div class="flex flex-wrap gap-1.5 mt-4 pt-4 border-t border-white/5">
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">Laravel 13</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">PHP 8.4-FPM</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-violet-400">Jokowi AI TTS</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">jerman_db</span>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-4">
+          <a 
+            href="/liebebelajarbahasajerman" 
+            class="w-full py-3.5 px-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-extrabold rounded-2xl shadow-lg shadow-violet-600/25 flex items-center justify-center gap-2 text-xs uppercase tracking-wider active:scale-95 transition"
+          >
+            <span>Launch Liebe Jerman</span>
+            <span>➔</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           APP 3: KEMBAR JAYA MOTOR (POS & NOTA THERMAL)
+           =================================================================== -->
+      <article class="glass-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group glow-emerald">
+        <div class="absolute -right-12 -top-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition duration-500"></div>
+
+        <div>
+          <!-- Top Tag & Icon -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+              🏍️
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] font-bold uppercase tracking-wider">
+              58mm Bluetooth POS
+            </span>
+          </div>
+
+          <h3 class="font-display text-xl font-bold text-white group-hover:text-emerald-300 transition">
+            Kembar Jaya Motor
+          </h3>
+          <p class="text-xs font-mono text-emerald-400/90 mt-0.5">Kasir Khusus Sparepart</p>
+
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Aplikasi kasir suku cadang motor super cepat: Cetak Nota Dual Copy (Pembeli & Toko) via Thermal 58mm / Web Bluetooth ESC/POS, Preset Terlaris Database, dan Export Excel Multi-Kriteria.
+          </p>
+
+          <!-- Tech Specs Pill -->
+          <div class="flex flex-wrap gap-1.5 mt-4 pt-4 border-t border-white/5">
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">Web Bluetooth</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-emerald-400">Thermal 58mm</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">ExcelJS Report</span>
+            <span class="px-2 py-0.5 rounded-lg bg-space-950/80 border border-white/5 text-[10px] font-mono text-slate-300">notapos_db</span>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-4 space-y-2">
+          <a 
+            href="/nota" 
+            class="w-full py-3.5 px-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold rounded-2xl shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 text-xs uppercase tracking-wider active:scale-95 transition"
+          >
+            <span>Buka Kasir Sparepart</span>
+            <span>➔</span>
+          </a>
+          <a 
+            href="/nota/export-excel" 
+            class="w-full py-2 px-3 bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-emerald-400 font-bold rounded-xl text-center text-xs flex items-center justify-center gap-1.5 transition"
+          >
+            <span>📊</span>
+            <span>Export Laporan Excel (.xlsx)</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- QUICK SYSTEM HEALTH & REPOSITORIES -->
+    <div class="glass-card rounded-3xl p-5 mt-8 space-y-4">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div>
+          <h4 class="font-display font-bold text-sm text-white">Infrastruktur & Layanan Server</h4>
+          <p class="text-xs text-slate-400">Node Production IP: 160.19.166.53 · Ubuntu Linux 24.04 LTS</p>
+        </div>
+        <div class="flex items-center gap-3 text-xs font-mono">
+          <span class="flex items-center gap-1 text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Nginx 1.24
+          </span>
+          <span class="flex items-center gap-1 text-cyan-400">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Node.js Backend
+          </span>
+          <span class="flex items-center gap-1 text-violet-400">
+            <span class="w-2 h-2 rounded-full bg-violet-400"></span> PHP 8.4-FPM
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-8 mt-12 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 space-y-2">
+      <p class="font-display font-bold text-slate-400 text-sm">
+        THE KINGDOM OF V · MASTER AI NEXUS
+      </p>
+      <p class="font-mono text-[11px] text-slate-600">
+        Architected & Engineered by <strong class="text-slate-300">Viery Octavianus Biliam (V30-Star)</strong>
+      </p>
+      <p class="text-[10px] text-slate-700">
+        Live Server: 160.19.166.53 · All Systems Operational
+      </p>
+    </div>
+  </footer>
+
+  <!-- Web3 Particle Background Script -->
+  <script>
+    const canvas = document.getElementById('web3-particles');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    let width = 0;
+    let height = 0;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 1.5 + 0.5;
+        this.color = Math.random() > 0.5 ? 'rgba(6, 182, 212, ' : 'rgba(139, 92, 246, ';
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + '0.6)';
+        ctx.fill();
+      }
+    }
+
+    const count = Math.min(60, Math.floor(window.innerWidth / 20));
+    for (let i = 0; i < count; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw connection lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(139, 92, 246, ${0.15 * (1 - dist / 110)})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Clock
+    function updateClock() {
+      const now = new Date();
+      const pad = (n) => String(n).padStart(2, '0');
+      const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())} WIB`;
+      const clockEl = document.getElementById('header-clock');
+      if (clockEl) clockEl.innerText = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
