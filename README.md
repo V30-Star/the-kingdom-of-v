@@ -33,4 +33,4 @@ Portal induk aplikasi terpadu (**The Kingdom of V**) yang mengintegrasikan selur
 - **Host**: Ubuntu Linux 24.04 LTS (160.19.166.53)
 - **Web Server & Reverse Proxy**: Nginx 1.24 (Gzip & SSL-ready)
 - **Database Engine**: PostgreSQL 16 Cluster
-- **Architect & Developer**: Viery Octavianus Biliam ([@V30-Star](https://github.com/V30-Star))
+- **Ecosystem Engine**: The Kingdom of V Autonomous Cloud Systems
